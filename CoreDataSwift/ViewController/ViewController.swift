@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         do {
             try dataContext.save()
-            dataArray.add(Album(id: dataArray.count, name: name, number: number))
+            dataArray.add(AlbumC(id: dataArray.count, name: name, number: number))
             tableView.reloadData()
         } catch {
             fatalError("\(error)")
@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             for result in results {
                 
-                dataArray.add(Album(id: result.value(forKey: "id") as! Int, name: result.value(forKey: "name") as! String, number: result.value(forKey: "phone") as! String))
+                dataArray.add(AlbumC(id: result.value(forKey: "id") as! Int, name: result.value(forKey: "name") as! String, number: result.value(forKey: "phone") as! String))
                 
             }
             
@@ -140,20 +140,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    class Album {
-        
-        var id = Int()
-        var name = String()
-        var number = String()
-        
-        init(id:Int, name:String, number:String) {
-            self.id = id
-            self.name = name
-            self.number = number
-        }
-        
-    }
-    
     @IBAction func addButtonClicked(_ sender: Any) {
     
         let alert = UIAlertController(title: "name", message: "type something", preferredStyle: .alert)
@@ -204,7 +190,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         albumCell = AlbumCell(style: .default, reuseIdentifier: CellIdentifier)
         
-        let data:Album = dataArray.object(at: indexPath.row) as! ViewController.Album
+        let data:AlbumC = dataArray.object(at: indexPath.row) as! AlbumC
         
         albumCell.titleLabel.text = data.name
         albumCell.msgLabel.text = data.number
@@ -216,7 +202,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let alert = UIAlertController(title: "Update", message: "Update the information", preferredStyle: .alert)
         
-        let albumData:Album = dataArray.object(at: indexPath.row) as! ViewController.Album
+        let albumData:AlbumC = dataArray.object(at: indexPath.row) as! AlbumC
         
         alert.addTextField { (textField) in
             textField.text = albumData.name
@@ -245,7 +231,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        let albumData:Album = dataArray.object(at: indexPath.row) as! ViewController.Album
+        let albumData:AlbumC = dataArray.object(at: indexPath.row) as! AlbumC
         
         if editingStyle == .delete {
             
