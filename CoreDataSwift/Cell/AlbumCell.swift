@@ -28,19 +28,20 @@ class AlbumCell: UITableViewCell {
         selectionStyle = .none
         contentView.backgroundColor = .clear
         
-        backView.frame = CGRect(x: 0, y: 0, width: AppWidth, height: 120)
+        backView.frame = CGRect(x: 0, y: 0, width: AppWidth, height: 100)
         contentView.addSubview(backView)
         
-        photoImageView.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
+        photoImageView.frame = CGRect(x: 10, y: 10, width: backView.frame.size.height - 20, height: backView.frame.size.height - 20)
         photoImageView.contentMode = .scaleAspectFit
+        photoImageView.image = UIImage(named: "conference")
         contentView.addSubview(photoImageView)
         
-        titleLabel.frame = CGRect(x: photoImageView.frame.origin.x + photoImageView.frame.size.width + 10, y: photoImageView.frame.origin.y, width: backView.frame.size.width - photoImageView.frame.size.width - 30, height: (backView.frame.size.height - 30)/2)
-        titleLabel.font = UIFont(name: "Helvetica-Light", size: 25)
+        titleLabel.frame = CGRect(x: photoImageView.frame.origin.x + photoImageView.frame.size.width + 10, y: photoImageView.frame.origin.y, width: backView.frame.size.width - photoImageView.frame.size.width - 30, height: photoImageView.frame.size.height/2)
+        titleLabel.font = UIFont(name: "Helvetica-Light", size: 20)
         titleLabel.textColor = .black
         contentView.addSubview(titleLabel)
         
-        msgLabel.frame = CGRect(x: titleLabel.frame.origin.x, y: titleLabel.frame.origin.y + titleLabel.frame.size.height + 10, width: titleLabel.frame.size.width, height: titleLabel.frame.size.height)
+        msgLabel.frame = CGRect(x: titleLabel.frame.origin.x, y: titleLabel.frame.origin.y + titleLabel.frame.size.height , width: titleLabel.frame.size.width, height: titleLabel.frame.size.height)
         msgLabel.font = UIFont(name: "Helvetica-Light", size: 20)
         msgLabel.textColor = .darkGray
         contentView.addSubview(msgLabel)
