@@ -13,6 +13,8 @@
 		BB379D49249BAF57008A50BA /* CoreDataSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB379D47249BAF57008A50BA /* CoreDataSwift.xcdatamodeld */; };
 		BB379D4B249BAF58008A50BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB379D4A249BAF58008A50BA /* Assets.xcassets */; };
 		BB379D4E249BAF58008A50BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB379D4C249BAF58008A50BA /* LaunchScreen.storyboard */; };
+		BB379D57249BB39A008A50BA /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB379D56249BB39A008A50BA /* AlbumCell.swift */; };
+		BB379D5B249BB6E7008A50BA /* SwiftHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB379D5A249BB6E7008A50BA /* SwiftHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BB379D4A249BAF58008A50BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB379D4D249BAF58008A50BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB379D4F249BAF58008A50BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB379D56249BB39A008A50BA /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		BB379D5A249BB6E7008A50BA /* SwiftHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		BB379D3F249BAF57008A50BA /* CoreDataSwift */ = {
 			isa = PBXGroup;
 			children = (
+				BB379D59249BB6D9008A50BA /* Constants */,
+				BB379D55249BB381008A50BA /* Cell */,
 				BB379D40249BAF57008A50BA /* AppDelegate.swift */,
 				BB379D42249BAF57008A50BA /* ViewController.swift */,
 				BB379D44249BAF57008A50BA /* Main.storyboard */,
@@ -65,6 +71,22 @@
 				BB379D47249BAF57008A50BA /* CoreDataSwift.xcdatamodeld */,
 			);
 			path = CoreDataSwift;
+			sourceTree = "<group>";
+		};
+		BB379D55249BB381008A50BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BB379D56249BB39A008A50BA /* AlbumCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BB379D59249BB6D9008A50BA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BB379D5A249BB6E7008A50BA /* SwiftHeader.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +162,9 @@
 			files = (
 				BB379D43249BAF57008A50BA /* ViewController.swift in Sources */,
 				BB379D41249BAF57008A50BA /* AppDelegate.swift in Sources */,
+				BB379D5B249BB6E7008A50BA /* SwiftHeader.swift in Sources */,
 				BB379D49249BAF57008A50BA /* CoreDataSwift.xcdatamodeld in Sources */,
+				BB379D57249BB39A008A50BA /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +312,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2499D8WGX;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = CoreDataSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +332,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2499D8WGX;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = CoreDataSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
