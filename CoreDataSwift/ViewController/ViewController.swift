@@ -86,8 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let updateID = id
         
-        request.predicate =
-            NSPredicate(format: "id = \(updateID)")
+        request.predicate = NSPredicate(format: "id = \(updateID)")
         
         do {
             
@@ -155,7 +154,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             
             let name = alert.textFields?[0].text
-            let phone = alert.textFields?[1].text
+            let phone = alert.textFields?[1].text                        
             
             self.insertCoreData(name: name!, number: phone!)
             

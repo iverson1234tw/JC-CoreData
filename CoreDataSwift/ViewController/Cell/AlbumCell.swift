@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class AlbumCell: UITableViewCell {
     
@@ -23,25 +24,59 @@ class AlbumCell: UITableViewCell {
         
     }
     
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        
+        backView.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(contentView)
+            make.top.equalTo(contentView)
+            make.right.equalTo(contentView)
+            make.bottom.equalTo(contentView)
+            
+        }
+        
+        photoImageView.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(backView).offset(10)
+            make.top.equalTo(backView).offset(10)
+            make.right.equalTo(backView).offset(-10)
+            make.bottom.equalTo(backView).offset(-10)
+            
+        }
+        
+        titleLabel.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(photoImageView.snp.right).offset(10)
+            make.top.equalTo(photoImageView)
+            
+        }
+        
+        msgLabel.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(titleLabel)
+            make.top.equalTo(titleLabel.snp.bottom)
+            
+        }
+        
+    }
+    
     func initialize() -> Void {
         
         selectionStyle = .none
         contentView.backgroundColor = .clear
         
-        backView.frame = CGRect(x: 0, y: 0, width: AppWidth, height: 100)
         contentView.addSubview(backView)
         
-        photoImageView.frame = CGRect(x: 10, y: 10, width: backView.frame.size.height - 20, height: backView.frame.size.height - 20)
         photoImageView.contentMode = .scaleAspectFit
         photoImageView.image = UIImage(named: "conference")
         contentView.addSubview(photoImageView)
         
-        titleLabel.frame = CGRect(x: photoImageView.frame.origin.x + photoImageView.frame.size.width + 10, y: photoImageView.frame.origin.y, width: backView.frame.size.width - photoImageView.frame.size.width - 30, height: photoImageView.frame.size.height/2)
         titleLabel.font = UIFont(name: "Helvetica-Light", size: 20)
         titleLabel.textColor = .black
         contentView.addSubview(titleLabel)
         
-        msgLabel.frame = CGRect(x: titleLabel.frame.origin.x, y: titleLabel.frame.origin.y + titleLabel.frame.size.height , width: titleLabel.frame.size.width, height: titleLabel.frame.size.height)
         msgLabel.font = UIFont(name: "Helvetica-Light", size: 20)
         msgLabel.textColor = .darkGray
         contentView.addSubview(msgLabel)
@@ -53,14 +88,6 @@ class AlbumCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 
 }

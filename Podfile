@@ -5,4 +5,5 @@ use_frameworks!
 target 'CoreDataSwift' do
 	pod 'JGProgressHUD'
 	pod 'IQKeyboardManagerSwift'
+	pod 'SnapKit', '~> 5.0.0'
 end
