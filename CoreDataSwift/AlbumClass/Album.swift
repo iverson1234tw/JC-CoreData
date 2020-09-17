@@ -18,6 +18,6 @@ class AlbumC: NSObject {
         self.id = id
         self.name = name
         self.number = number
-    }        
+    }
     
 }

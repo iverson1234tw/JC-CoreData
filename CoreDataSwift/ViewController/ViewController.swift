@@ -146,6 +146,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addTextField { (textField) in
             textField.placeholder = "Please fill in name"
         }
+        
         alert.addTextField { (textField) in
             textField.placeholder = "Please fill in phone number"
             textField.keyboardType = .phonePad
@@ -170,7 +171,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 120
+        return 120        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
