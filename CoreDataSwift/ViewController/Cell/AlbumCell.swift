@@ -41,15 +41,15 @@ class AlbumCell: UITableViewCell {
             
             make.left.equalTo(backView).offset(10)
             make.top.equalTo(backView).offset(10)
-            make.right.equalTo(backView).offset(-10)
             make.bottom.equalTo(backView).offset(-10)
+            make.width.equalTo(photoImageView.snp.height)
             
         }
         
         titleLabel.snp.makeConstraints { (make) in
             
-            make.left.equalTo(photoImageView.snp.right).offset(10)
             make.top.equalTo(photoImageView)
+            make.left.equalTo(photoImageView.snp.right).offset(10)
             
         }
         
